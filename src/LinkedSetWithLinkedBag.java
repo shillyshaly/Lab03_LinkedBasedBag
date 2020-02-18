@@ -7,74 +7,65 @@ import java.util.*;
  * @author Jamie Hernandez
  * @version 2/11/2020
  */
-public class LinkedSetWithLinkedBag<T extends Comparable<? super T>> implements SetInterface<T>
-{
+public class LinkedSetWithLinkedBag<T extends Comparable<? super T>> implements SetInterface<T> {
     private LinkedBag<T> setOfEntries;
 
     /**
      * Creates a set from a new, empty linked bag.
      */
-    public LinkedSetWithLinkedBag()
-    {
+    public LinkedSetWithLinkedBag() {
         //TODO Project1 - DONE
         this.setOfEntries = new LinkedBag<>();
     } // end default constructor
 
-    public boolean add(T newEntry)
-    {
+    public boolean add(T newEntry) {
         //TODO Project1 - DONE
         boolean success = false;
-        if (newEntry != null && !this.setOfEntries.contains(newEntry)){
-            success = this.setOfEntries.add(newEntry);;
+        if (newEntry != null && !this.setOfEntries.contains(newEntry)) {
+            success = this.setOfEntries.add(newEntry);
+            ;
         }
         return success;
     } // end add
 
-    public T[] toArray()
-    {
+    public T[] toArray() {
         //TODO Project1 - DONE
         return this.setOfEntries.toArray();
     } // end toArray
 
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         //TODO Project1 - DONE
         return this.setOfEntries.isEmpty();
     } // end isEmpty
 
-    public boolean contains(T anEntry)
-    {
+    public boolean contains(T anEntry) {
         //TODO Project1 - DONE
         return this.setOfEntries.contains(anEntry);
     } // end contains
 
-    public void clear()
-    {
+    public void clear() {
         //TODO Project1 - DONE
         this.setOfEntries.clear();
         System.out.println("The set is empty");
     } // end clear
 
-    public T remove()
-    {
+    public T remove() {
         //TODO Project1 - DONE
         return this.setOfEntries.remove();
     } // end remove
 
-    public boolean removeElement(T anEntry)
-    {
+    public boolean removeElement(T anEntry) {
         //TODO Project1 - DONE
         return this.setOfEntries.removeElement(anEntry);
     } // end remove
 
     // Displays a set.
-    public void displaySet()
-    {
+    public void displaySet() {
         //TODO Project1 - DONE
         T[] tempArr = this.setOfEntries.toArray();
-        if (!this.setOfEntries.isEmpty()){
+        if (!this.setOfEntries.isEmpty()) {
 //            System.out.println("The set contains " + this.setOfEntries. + " element(s), as follows: ");
-            for (int i = 0; i < tempArr.length; i++){
+            for (int i = 0; i < tempArr.length; i++) {
                 System.out.print(tempArr[i] + " ");
             }
         }
@@ -82,15 +73,12 @@ public class LinkedSetWithLinkedBag<T extends Comparable<? super T>> implements 
     } // end displaySet
 
 
-
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         String[] inputData = {"A", "B", "C", "D", "A", "C", "B", "B"};
 
         System.out.println("--> Creating set1 and adding to it elements from inputData: " + Arrays.toString(inputData));
         SetInterface<String> set1 = new LinkedSetWithLinkedBag<>();
-        for (int i=0; i < inputData.length; i++)
-        {
+        for (int i = 0; i < inputData.length; i++) {
             set1.add(inputData[i]);
         }
         System.out.println("--> Calling displaySet method to display elements in set1");
